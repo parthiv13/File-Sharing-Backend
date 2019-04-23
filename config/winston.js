@@ -36,26 +36,15 @@ const logger = winston.createLogger({
         })
     ],
     exceptionHandlers: [
-        new winston.transports.File({ filename: 'exceptions.log' })
+        new winston.transports.File({ filename: './logs/exceptions.log' })
     ],
     exitOnError: false
 });
 
-//At Production Level
-/*logger.exceptions.handle(
-    new transports.File({filename: '../logs/exceptions.log'})
-)
-*/
 logger.stream = {
     write: function(message, encoding) {
         logger.info(message);
     }
 }
-
-/*if (process.env.NODE_ENV !== 'production') {
-    logger.add(new winston.transports.Console({
-        format: winston.format.simple()
-    }));
-}*/
 
 module.exports = logger; 
