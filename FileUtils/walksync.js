@@ -12,3 +12,5 @@ var walkSync = function(dir, filelist) {
     });
     return filelist;
   };
+
+module.exports = walkSync;

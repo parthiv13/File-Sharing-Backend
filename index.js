@@ -9,6 +9,8 @@ apiRouter = require('./routes/api');
 app.use(morgan('dev', { "stream": logger.stream }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
+app.use('/public', express.static('public'));
 
 app.use('/api', apiRouter);
 
