@@ -2,6 +2,7 @@ var express = require('express'),
 cors = require('cors'),
 app = express(),
 morgan = require('morgan'),
+errorHandler = require('error')
 bodyParser = require('body-parser'),
 logger = require('./config/winston'),
 apiRouter = require('./routes/api');
